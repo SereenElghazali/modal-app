@@ -1,0 +1,13 @@
+<div class="x" *ngIf="isModalOpen"  >
+  <div class="over" appOverlyDirective [isOpen]="isModalOpen" (toggle)="closeModal()" ></div>
+  <div class="modal"  >
+      <button (click)="closeModal()">closeModal</button>
+      <div class="title">
+        <ng-content select=".title"></ng-content>
+      </div>
+      <div class="content">
+          <ng-content select=".content"></ng-content>
+      </div>
+    </div>
+    <!--[ngStyle]="{'display':isModalOpen == true ? 'block' : 'none' }"-->
+  </div>
